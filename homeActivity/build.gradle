@@ -22,13 +22,13 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
     }
 
     def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
-    def debugTree = fileTree(dir: "$project.buildDir/tmp/kotlin-classes/debug", excludes: fileFilter)
+    def debugTree = fileTree(dir: "$project.buildDir/tmp/kotlin-classes/debug", excludes: fileFilter)   // kotlin classes
     def mainSrc = "$project.projectDir/src/main/java"
 
 
     print "buildDir = $project.buildDir\n"
     print "project.projectDir = $project.projectDir\n"
-    additionalSourceDirs.setFrom(files([mainSrc]))
+    additionalSourceDirs.setFrom(files([mainSrc]))    // for kotlin
     sourceDirectories.setFrom(files([mainSrc]))
     classDirectories.setFrom(files([debugTree]))
     executionData.setFrom(fileTree(dir: project.buildDir, includes: [
