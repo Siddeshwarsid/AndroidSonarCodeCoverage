@@ -1,0 +1,2 @@
+include ':homeActivity'
+rootProject.name = "Sonarqube"
