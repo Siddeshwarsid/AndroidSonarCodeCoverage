@@ -1,2 +1,3 @@
+include ':dynamicfeature'
 include ':homeActivity'
 rootProject.name = "Sonarqube"
