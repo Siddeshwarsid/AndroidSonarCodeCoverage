@@ -1,62 +1,10 @@
 plugins {
     id 'com.android.dynamic-feature'
     id 'kotlin-android'
-//    id 'jacoco'
-//    id 'org.sonarqube'
 }
 
 apply from: '../jacoco.gradle'
 apply from: '../sonar.gradle'
-
-//jacoco {
-//    toolVersion = "$jacocoVersion"
-//}
-//
-//tasks.withType(Test) {
-//    jacoco.includeNoLocationClasses = true
-//}
-//
-//task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
-//
-//    reports {
-//        xml.enabled = true
-//        html.enabled = true
-//    }
-//
-//    def fileFilter = ['**/R.class', '**/R$*.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*']
-//    def debugKotlinTree = fileTree(dir: "$project.buildDir/tmp/kotlin-classes/debug", excludes: fileFilter)   // kotlin classes
-//    def debugJavaTree = fileTree(dir: "$project.buildDir/intermediates/javac/debug", excludes: fileFilter)   // java classes
-//    def mainSrc = "$project.projectDir/src/main/java"
-//
-//
-//    additionalSourceDirs.setFrom(files([mainSrc]))    // for kotlin
-//    sourceDirectories.setFrom(files([mainSrc]))
-//    classDirectories.setFrom(files([debugKotlinTree, debugJavaTree]))
-//    executionData.setFrom(fileTree(dir: project.buildDir, includes: [
-//            'jacoco/testDebugUnitTest.exec', 'outputs/code_coverage/debugAndroidTest/connected/**/*.ec'
-//    ]))
-//}
-
-//sonarqube {
-//    properties {
-//        property "sonar.projectName", "${project.name}"
-//        property "sonar.projectKey", "${project.name}"
-////            property "sonar.login", "d9d6c1821f36670639a07227ad8dca19a90d4562"
-//        property "sonar.sources", "src/main/java"    // Needed
-//
-//        property "sonar.projectVersion", "1.0.0"
-//        property "sonar.sourceEncoding", "UTF-8"
-//        property "sonar.java.coveragePlugin", "jacoco"
-//        property "sonar.coverage.jacoco.xmlReportPaths", "build/reports/jacoco/jacocoTestReport/jacocoTestReport.xml"
-//
-//        // taken from `jacoco.gradle`
-//        property "sonar.coverage.exclusions", "**/R.class', '**/BuildConfig.*', '**/Manifest*.*', '**/*Test*.*', 'android/**/*.*"
-//    }
-//}
-//
-////tasks.sonarqube.dependsOn "jacocoTestReport"
-//tasks.sonarqube.dependsOn ":${project.name}:jacocoTestReport"
-
 
 android {
     compileSdkVersion 30
