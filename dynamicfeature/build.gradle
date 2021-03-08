@@ -26,8 +26,6 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
     def mainSrc = "$project.projectDir/src/main/java"
 
 
-    print "buildDir = $project.buildDir\n"
-    print "project.projectDir = $project.projectDir\n"
     additionalSourceDirs.setFrom(files([mainSrc]))    // for kotlin
     sourceDirectories.setFrom(files([mainSrc]))
     classDirectories.setFrom(files([debugKotlinTree, debugJavaTree]))
@@ -38,6 +36,11 @@ task jacocoTestReport(type: JacocoReport, dependsOn: ['testDebugUnitTest']) {
 
 sonarqube {
     properties {
+        property "sonar.projectName", "dynamic-1"
+        property "sonar.projectKey", "dynamic-1"
+//            property "sonar.login", "d9d6c1821f36670639a07227ad8dca19a90d4562"
+        property "sonar.sources", "src/main/java"    // Needed
+
         property "sonar.projectVersion", "1.0.0"
         property "sonar.sourceEncoding", "UTF-8"
         property "sonar.java.coveragePlugin", "jacoco"
@@ -50,6 +53,7 @@ sonarqube {
 
 //tasks.sonarqube.dependsOn "jacocoTestReport"
 tasks.sonarqube.dependsOn ":dynamicfeature:jacocoTestReport"
+
 
 android {
     compileSdkVersion 30
