@@ -3,8 +3,8 @@ apply plugin: "org.sonarqube"
 
 sonarqube {
   properties {
-    property "sonar.projectName", "${project.name}"
-    property "sonar.projectKey", "${project.name}"
+    property "sonar.projectName", "AndroidSonarQubeDemo"
+    property "sonar.projectKey", "AndroidSonarQubeDemo"
 //        property "sonar.login", "9ee97a9c750832414d57d01a61ba1b8e2bd884f4"
     property "sonar.sources", "src/main/java"
 
