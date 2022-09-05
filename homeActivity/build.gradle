@@ -46,7 +46,7 @@ android {
             includeAndroidResources = true
         }
     }
-    dynamicFeatures = [':dynamicfeature']
+    // dynamicFeatures = [':dynamicfeature']
 }
 
 dependencies {
